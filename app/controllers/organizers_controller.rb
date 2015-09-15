@@ -10,13 +10,18 @@ post '/sessions' do
   end
 end
 
+# create organizer
 post '/organizers' do
   organizer = Organizer.create(name: params[:name], email: params[:email], password: params[:password])
   login(organizer)
   redirect "/organizer/#{organizer.id}"
 end
 
-
+# logout
+get '/logout' do
+  logout!
+  redirect '/'
+end
 
 # Organizer show profile page
 get "/organizers/:id" do

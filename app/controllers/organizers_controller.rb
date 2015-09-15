@@ -25,5 +25,6 @@ end
 
 # Organizer show profile page
 get "/organizers/:id" do
+  current_user
   erb :"organizers/show"
 end

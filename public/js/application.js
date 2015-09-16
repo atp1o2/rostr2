@@ -6,6 +6,7 @@ $(document).ready(function() {
   showSignup();
   showLogin();
   cancel();
+  eventPass();
 });
 
 
@@ -29,4 +30,17 @@ var cancel = function(){
     $(".button").show();
     $(".form").hide();
   })
+}
+
+var eventPass = function(){
+  $("#eventPass").on('click', function(event){
+    event.preventDefault();
+    console.log("prevented yo!");
+  })
+  // on click of the specific event
+  // present partial that I need to submit my password
+  
+  //continuously on this same event, i am going to hit the submit function
+  // the password will be givin
+  // and i need to give it another page. 
 }

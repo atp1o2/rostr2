@@ -1,0 +1,30 @@
+ <link rel="stylesheet" href="../css/event.css">
+
+<div id="hello">
+<ul>
+	<div class = "event-div">
+		<% @events.each do |event| %>
+			<li><strong><%= event.name%></strong>
+			<br>location: <%= event.location %>
+			<br>finish date: <%= event.finish_date %>
+			<br>start date: <%= event.start_date %>
+			<br>description:<%= event.description %>
+			<br><br>
+			<br>[# of participants]
+			<br>
+			
+			<form action="/events/<%=event.id%>" method="post">
+				<input type="text" name="access">
+				<input type="submit">
+			</form>
+		<%end%>
+	</div>
+</ul>
+</div>
+
+<!-- Ideally, navigation needs to be in our layout
+look to pyoo layout for skipping headers -->
+<a href="/">home</a>
+
+
+

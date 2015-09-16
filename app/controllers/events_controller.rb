@@ -4,9 +4,9 @@ get '/events' do
 end
 
 ## 
-get '/event/:id' do
-	@event = params[:id]
-	@participants = Participant.All
+post '/events/:id' do
+	@event = Event.find(params[:id])
+	@participants = Participant.all
 
 	if @event.password == params[:access]
 		@participant

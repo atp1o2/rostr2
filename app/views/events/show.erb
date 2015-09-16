@@ -1,0 +1,9 @@
+<%=@event.name%>
+
+<br>
+
+<h3>Participants:</h3>
+
+<%@participants.each do |participant|%>
+	<br><%=participant.first_name%>
+<%end%>
